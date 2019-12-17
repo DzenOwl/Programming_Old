@@ -67,3 +67,5 @@ def test_all_heights_errors():
         all_heights(0)
     with pytest.raises(SyntaxError):
         all_heights("qwerty")
+
+# Пожалуйста, пусть я сдам всё с первого раза!

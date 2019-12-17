@@ -22,7 +22,7 @@ def test_check_check_height_errors():
 
 # num
 def check_num(num) -> int:
-    if type(num) is not in [str, int]:
+    if type(num) is float:
         raise TypeError('Incorrect value. The capacity must be an integer number >=0')
     try:
         num = int(num)
@@ -63,9 +63,9 @@ def test_all_heights():
 
 
 def test_all_heights_errors():
-    with pytest.raises(ValueError):
+    with pytest.raises(TypeError):
         all_heights(0)
-    with pytest.raises(SyntaxError):
+    with pytest.raises(TypeError):
         all_heights("qwerty")
 
 # Пожалуйста, пусть я сдам всё с первого раза!

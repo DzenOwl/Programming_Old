@@ -61,6 +61,7 @@ def test_all_heights():
     assert all_heights(2, 3) == [1.15, 1.63]
     assert all_heights(10, 15) == [2.58, 3.65, 4.47, 5.16, 5.77, 6.32, 6.83, 7.3, 7.75, 8.16, 8.56, 8.94, 9.31, 9.66]
 
+
 def test_all_heights_errors():
     with pytest.raises(ValueError):
         all_heights(0)

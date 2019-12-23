@@ -1,0 +1,376 @@
+\hypertarget{namespace_l_w5}{
+\section{Пространство имен LW5}
+\label{namespace_l_w5}\index{LW5@{LW5}}
+}
+\subsection*{Функции}
+\begin{CompactItemize}
+\item 
+def \hyperlink{namespace_l_w5_88a5f4487738d82cba5b3ac7c6a09282}{check}
+\item 
+def \hyperlink{namespace_l_w5_bd76fa8b0757a185015a19bfb4187ab2}{test\_\-check}
+\item 
+def \hyperlink{namespace_l_w5_b27c8f4656c69744a648a5e863d447bc}{test\_\-check\_\-errors}
+\item 
+def \hyperlink{namespace_l_w5_67083ef6b26830cf508d5705c82f44f7}{find\_\-similar}
+\item 
+def \hyperlink{namespace_l_w5_cc429e4a26de905f6b164b725d97fb1f}{test\_\-find\_\-similar}
+\item 
+def \hyperlink{namespace_l_w5_db1e3344370efc18d46bd9ca47552456}{test\_\-find\_\-similar\_\-errors}
+\item 
+def \hyperlink{namespace_l_w5_487d20d1da82494dd97dda4048ca32cd}{triangle}
+\item 
+def \hyperlink{namespace_l_w5_a8dfc65142348966740631e021a65b50}{test\_\-triangle}
+\item 
+def \hyperlink{namespace_l_w5_f8cbf0a3bea8e2d9026208357fea8a3c}{test\_\-triangle\_\-errors}
+\item 
+def \hyperlink{namespace_l_w5_f4d62490e315452ac8f09431ecebc77d}{main\_\-program}
+\item 
+def \hyperlink{namespace_l_w5_36f7970fbe6df884e3cde515e595d471}{test\_\-main\_\-program}
+\item 
+def \hyperlink{namespace_l_w5_24b0846f3346125f53f802a4f6291546}{test\_\-main\_\-program\_\-errors}
+\end{CompactItemize}
+\subsection*{Переменные}
+\begin{CompactItemize}
+\item 
+\hypertarget{namespace_l_w5_9fd474556c4744ef6d4f72f597ef9e0f}{
+tuple \textbf{edge} = input(\char`\"{}Write the sequence of numbers: \char`\"{})}
+\label{namespace_l_w5_9fd474556c4744ef6d4f72f597ef9e0f}
+
+\end{CompactItemize}
+
+
+\subsection{Подробное описание}
+
+
+\footnotesize\begin{verbatim}
+Захарченко Евгения, группа КИ19-17/2б
+Практическая работа №34 вариант 24: "О равнобедренном треугольнике"
+
+Дана последовательность положительных целых чисел EDGE.Необходимо
+определить, существует ли в этой последовательности такая тройка элементов S, C и P,
+чтобы треугольник с такими сторонами был невырожденным и равнобедренным.
+\end{verbatim}
+\normalsize
+ 
+
+
+
+\subsection{Функции}
+\hypertarget{namespace_l_w5_88a5f4487738d82cba5b3ac7c6a09282}{
+\index{LW5@{LW5}!check@{check}}
+\index{check@{check}!LW5@{LW5}}
+\subsubsection[{check}]{\setlength{\rightskip}{0pt plus 5cm}def LW5::check ( {\em inp})}}
+\label{namespace_l_w5_88a5f4487738d82cba5b3ac7c6a09282}
+
+
+
+
+\footnotesize\begin{verbatim}
+Проверка ввода.
+Принимает на вход строку из 3 и более целых положительных чисел, разделённых пробелами.
+Проверяет введённые символы на то, что это числа, что они положительные, целые и что их три или больше.
+
+Arg:
+inp:
+    Строка неупорядоченных чисел, разделённых пробелами.
+
+Returns:
+    Список из значений, указанных в строке
+Raises:
+ValueError, AttributeError.
+
+    Examples:
+>>> check("6 6 7 8 9")
+[6, 6, 7, 8, 9]
+
+>>>check("qwerty")
+Traceback (most recent call last):
+    ...
+ValueError: Number is not integer. Write the right answer, please
+
+>>>check("123")
+Traceback (most recent call last):
+    ...
+ValueError: Number is not integer. Write the right answer, please
+
+>>>check("3.5")
+Traceback (most recent call last):
+    ...
+ValueError: Number is not integer. Write the right answer, please
+
+>>>check("-1")
+Traceback (most recent call last):
+    ...
+ValueError: Number is not integer. Write the right answer, please
+
+>>>check("123")
+Traceback (most recent call last):
+    ...
+ValueError: Write 3 or more numbers, please
+
+>>>check(123)
+Traceback (most recent call last):
+    ...
+AttributeError: 'int' object has no attribute 'split'
+\end{verbatim}
+\normalsize
+ \hypertarget{namespace_l_w5_67083ef6b26830cf508d5705c82f44f7}{
+\index{LW5@{LW5}!find\_\-similar@{find\_\-similar}}
+\index{find\_\-similar@{find\_\-similar}!LW5@{LW5}}
+\subsubsection[{find\_\-similar}]{\setlength{\rightskip}{0pt plus 5cm}def LW5::find\_\-similar ( {\em lst})}}
+\label{namespace_l_w5_67083ef6b26830cf508d5705c82f44f7}
+
+
+
+
+\footnotesize\begin{verbatim}
+Поиск одинаковых значений в списке.
+
+Arg:
+inp:
+    Строка неупорядоченных чисел, разделённых пробелами.
+
+Returns:
+    Число, на которое были найдены совпадения, либо None, если совпадений найдено не было
+Raises:
+    TypeError.
+
+    Examples:
+>>> find_similar([1, 2, 3, 5, 5])
+5
+
+>>> find_similar([4, 4, 1, 1])
+4
+
+>>> find_similar([1, 2, 3, 4, 5])
+>>>
+
+>>> find_similar(123)
+Traceback (most recent call last):
+  ...
+TypeError: object of type 'int' has no len()
+
+>>> find_similar("la la la")
+Traceback (most recent call last):
+  ...
+TypeError: 'str' object doesn't support item deletion
+
+\end{verbatim}
+\normalsize
+ \hypertarget{namespace_l_w5_f4d62490e315452ac8f09431ecebc77d}{
+\index{LW5@{LW5}!main\_\-program@{main\_\-program}}
+\index{main\_\-program@{main\_\-program}!LW5@{LW5}}
+\subsubsection[{main\_\-program}]{\setlength{\rightskip}{0pt plus 5cm}def LW5::main\_\-program ( {\em edge})}}
+\label{namespace_l_w5_f4d62490e315452ac8f09431ecebc77d}
+
+
+
+
+\footnotesize\begin{verbatim}
+Дана последовательность положительных целых чисел EDGE.Необходимо
+определить, существует ли в этой последовательности такая тройка элементов S, C и P,
+чтобы треугольник с такими сторонами был невырожденным и равнобедренным.
+
+Args:
+    edge: строка, состоящая из 3 или более положительных целых чисел.
+
+Returns:
+    answer: кортеж из 3 чисел, если треугольник невырожденный
+            None, если треугольник вырожденный
+
+Raises:
+    ValueError.
+
+    Examples:
+>>> main_program("5 5 5")
+5
+(5, 5, 5)
+(5, 5, 5)
+>>> main_program("6 6 7 8 9")
+6
+(7, 6, 6)
+(7, 6, 6)
+
+>>> main_program("qwerty")
+Traceback (most recent call last):
+  ...
+ValueError: Number is not integer. Write the right answer, please
+
+>>> main_program("3.5")
+Traceback (most recent call last):
+  ...
+ValueError: Number is not integer. Write the right answer, please
+
+>>> main_program("-1")
+Traceback (most recent call last):
+  ...
+ValueError: Number is not integer. Write the right answer, please
+
+>>> main_program("2 3")
+Traceback (most recent call last):
+  ...
+ValueError: Write 3 or more numbers, please
+
+>>> main_program(123)
+Traceback (most recent call last):
+  ...
+AttributeError: 'int' object has no attribute 'split'
+
+>>> main_program([1, 2, 3])
+Traceback (most recent call last):
+  ...
+AttributeError: 'list' object has no attribute 'split'
+
+>>> main_program("1 2 3")
+None
+Search failed
+\end{verbatim}
+\normalsize
+ \hypertarget{namespace_l_w5_bd76fa8b0757a185015a19bfb4187ab2}{
+\index{LW5@{LW5}!test\_\-check@{test\_\-check}}
+\index{test\_\-check@{test\_\-check}!LW5@{LW5}}
+\subsubsection[{test\_\-check}]{\setlength{\rightskip}{0pt plus 5cm}def LW5::test\_\-check ()}}
+\label{namespace_l_w5_bd76fa8b0757a185015a19bfb4187ab2}
+
+
+
+
+\footnotesize\begin{verbatim}Тест проверки ввода.
+    Ввод правильных значений.
+    Если введена строка из целых положительных чисел в количестве 3+, тест пройден\end{verbatim}
+\normalsize
+ \hypertarget{namespace_l_w5_b27c8f4656c69744a648a5e863d447bc}{
+\index{LW5@{LW5}!test\_\-check\_\-errors@{test\_\-check\_\-errors}}
+\index{test\_\-check\_\-errors@{test\_\-check\_\-errors}!LW5@{LW5}}
+\subsubsection[{test\_\-check\_\-errors}]{\setlength{\rightskip}{0pt plus 5cm}def LW5::test\_\-check\_\-errors ()}}
+\label{namespace_l_w5_b27c8f4656c69744a648a5e863d447bc}
+
+
+
+
+\footnotesize\begin{verbatim}Тест проверки ввода.
+    Ввод неправильных значений.
+    Если введено что угодно, но не строка из целых положительных чисел в количестве 3+, это ошибка\end{verbatim}
+\normalsize
+ \hypertarget{namespace_l_w5_cc429e4a26de905f6b164b725d97fb1f}{
+\index{LW5@{LW5}!test\_\-find\_\-similar@{test\_\-find\_\-similar}}
+\index{test\_\-find\_\-similar@{test\_\-find\_\-similar}!LW5@{LW5}}
+\subsubsection[{test\_\-find\_\-similar}]{\setlength{\rightskip}{0pt plus 5cm}def LW5::test\_\-find\_\-similar ()}}
+\label{namespace_l_w5_cc429e4a26de905f6b164b725d97fb1f}
+
+
+
+
+\footnotesize\begin{verbatim}Тест нахождения совпадений.
+    Ввод правильных значений.
+    Если введён список, и совпадения в списке найдены, тест пройден\end{verbatim}
+\normalsize
+ \hypertarget{namespace_l_w5_db1e3344370efc18d46bd9ca47552456}{
+\index{LW5@{LW5}!test\_\-find\_\-similar\_\-errors@{test\_\-find\_\-similar\_\-errors}}
+\index{test\_\-find\_\-similar\_\-errors@{test\_\-find\_\-similar\_\-errors}!LW5@{LW5}}
+\subsubsection[{test\_\-find\_\-similar\_\-errors}]{\setlength{\rightskip}{0pt plus 5cm}def LW5::test\_\-find\_\-similar\_\-errors ()}}
+\label{namespace_l_w5_db1e3344370efc18d46bd9ca47552456}
+
+
+
+
+\footnotesize\begin{verbatim}Тест нахождения совпадений.
+    Ввод неправильных значений.
+    Если введено что угодно, кроме списка, это ошибка\end{verbatim}
+\normalsize
+ \hypertarget{namespace_l_w5_36f7970fbe6df884e3cde515e595d471}{
+\index{LW5@{LW5}!test\_\-main\_\-program@{test\_\-main\_\-program}}
+\index{test\_\-main\_\-program@{test\_\-main\_\-program}!LW5@{LW5}}
+\subsubsection[{test\_\-main\_\-program}]{\setlength{\rightskip}{0pt plus 5cm}def LW5::test\_\-main\_\-program ()}}
+\label{namespace_l_w5_36f7970fbe6df884e3cde515e595d471}
+
+
+
+
+\footnotesize\begin{verbatim}Тест основной программы.
+    Ввод правильных значений.
+    Если введена строка из целых положительных чисел в количестве 3+, тест пройден\end{verbatim}
+\normalsize
+ \hypertarget{namespace_l_w5_24b0846f3346125f53f802a4f6291546}{
+\index{LW5@{LW5}!test\_\-main\_\-program\_\-errors@{test\_\-main\_\-program\_\-errors}}
+\index{test\_\-main\_\-program\_\-errors@{test\_\-main\_\-program\_\-errors}!LW5@{LW5}}
+\subsubsection[{test\_\-main\_\-program\_\-errors}]{\setlength{\rightskip}{0pt plus 5cm}def LW5::test\_\-main\_\-program\_\-errors ()}}
+\label{namespace_l_w5_24b0846f3346125f53f802a4f6291546}
+
+
+
+
+\footnotesize\begin{verbatim}Тест проверки ввода.
+    Ввод неправильных значений.
+    Если введено что угодно, но не строка из целых положительных чисел в количестве 3+, это ошибка\end{verbatim}
+\normalsize
+ \hypertarget{namespace_l_w5_a8dfc65142348966740631e021a65b50}{
+\index{LW5@{LW5}!test\_\-triangle@{test\_\-triangle}}
+\index{test\_\-triangle@{test\_\-triangle}!LW5@{LW5}}
+\subsubsection[{test\_\-triangle}]{\setlength{\rightskip}{0pt plus 5cm}def LW5::test\_\-triangle ()}}
+\label{namespace_l_w5_a8dfc65142348966740631e021a65b50}
+
+
+
+
+\footnotesize\begin{verbatim}Тест на вырожденность.
+    Ввод правильных значений.
+    Если треугольник невырожденный, тест пройден\end{verbatim}
+\normalsize
+ \hypertarget{namespace_l_w5_f8cbf0a3bea8e2d9026208357fea8a3c}{
+\index{LW5@{LW5}!test\_\-triangle\_\-errors@{test\_\-triangle\_\-errors}}
+\index{test\_\-triangle\_\-errors@{test\_\-triangle\_\-errors}!LW5@{LW5}}
+\subsubsection[{test\_\-triangle\_\-errors}]{\setlength{\rightskip}{0pt plus 5cm}def LW5::test\_\-triangle\_\-errors ()}}
+\label{namespace_l_w5_f8cbf0a3bea8e2d9026208357fea8a3c}
+
+
+
+
+\footnotesize\begin{verbatim}Тест на вырожденность.
+    Ввод неправильных значений.
+    Если введено что угодно, но не число и список, это ошибка\end{verbatim}
+\normalsize
+ \hypertarget{namespace_l_w5_487d20d1da82494dd97dda4048ca32cd}{
+\index{LW5@{LW5}!triangle@{triangle}}
+\index{triangle@{triangle}!LW5@{LW5}}
+\subsubsection[{triangle}]{\setlength{\rightskip}{0pt plus 5cm}def LW5::triangle ( {\em sim}, \/   {\em lst})}}
+\label{namespace_l_w5_487d20d1da82494dd97dda4048ca32cd}
+
+
+
+
+\footnotesize\begin{verbatim}
+Проверяет треугольник на вырожденность. Если в списке есть сторона:
+    а) которая меньше суммы двух одинаковых сторон
+    б) которая при сложении с одной из одинаковых сторон даёт результат, больший, чем вторая одинаковая сторона,
+то возвращает список из трёх сторон, иначе возвращает None.
+
+Args:
+sim: Длина одинаковых сторон
+lst: Список возможных сторон
+
+Returns:
+    x, y, z, если треугольник невырожденный
+    None, если треугольник вырожденный
+
+Raises:
+    TypeError
+
+    Examples:
+>>> triangle(6, [1, 2, 3])
+(6, 6, 1)
+
+>>> triangle(6, [13, 14, 15])
+>>>
+
+>>> triangle(6, 5)
+Traceback (most recent call last):
+  ...
+TypeError: 'int' object is not iterable
+>>> triangle("qwerty")
+Traceback (most recent call last):
+  ...
+TypeError: triangle() missing 1 required positional argument: 'lst'
+\end{verbatim}
+\normalsize
+ 
